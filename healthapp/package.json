@@ -7,12 +7,19 @@
   "scripts": {
     "calculateBmi": "tsc --noEmit && node bmiCalculator.ts",
     "calculateExercises": "tsc --noEmit && node exerciseCalculator.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.ts",
+    "dev": "concurrently \"tsc --watch\" \"node --watch index.ts\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/express": "^5.0.6",
     "@types/node": "^26.1.2",
+    "concurrently": "^10.0.4",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
   }
 }

@@ -1,8 +1,5 @@
-const calculateBmi = (): string => {
+export const calculateBmi = (heightCm: number, weightKg: number): string => {
   // converts cm to meters
-  const heightCm = Number(process.argv[2]);
-  const weightKg = Number(process.argv[3]);
-
   const convertHeight = (height: number) => height / 100;
 
   const bmi = weightKg / (convertHeight(heightCm) * convertHeight(heightCm));
@@ -25,5 +22,3 @@ const calculateBmi = (): string => {
     return "Obese (Class III)";
   }
 };
-
-console.log(calculateBmi());
