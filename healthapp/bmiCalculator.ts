@@ -1,5 +1,8 @@
-const calculateBmi = (heightCm: number, weightKg: number): string => {
+const calculateBmi = (): string => {
   // converts cm to meters
+  const heightCm = Number(process.argv[2]);
+  const weightKg = Number(process.argv[3]);
+
   const convertHeight = (height: number) => height / 100;
 
   const bmi = weightKg / (convertHeight(heightCm) * convertHeight(heightCm));
@@ -23,4 +26,4 @@ const calculateBmi = (heightCm: number, weightKg: number): string => {
   }
 };
 
-console.log(calculateBmi(180, 74));
+console.log(calculateBmi());
