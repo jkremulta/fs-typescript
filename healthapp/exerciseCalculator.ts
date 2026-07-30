@@ -1,4 +1,4 @@
-interface Result {
+export interface Result {
   periodLength: number;
   trainingDays: number;
   success: boolean;
@@ -8,11 +8,14 @@ interface Result {
   average: number;
 }
 
-const calculateExercises = (): Result => {
-  const args = process.argv.slice(2).map(Number);
+export const calculateExercises = (
+  dailyHours: number[],
+  targetAmount: number,
+): Result => {
+  // const args = process.argv.slice(2).map(Number);
 
-  const dailyHours = args.slice(0, -1);
-  const targetAmount = args[args.length - 1];
+  // const dailyHours = args.slice(0, -1);
+  // const targetAmount = args[args.length - 1];
 
   const totalHours = dailyHours.reduce((sum, hours) => sum + hours, 0);
   const averageHours = totalHours / dailyHours.length;
@@ -49,5 +52,3 @@ const calculateExercises = (): Result => {
 
   return stats;
 };
-
-console.log(calculateExercises());
