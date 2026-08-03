@@ -1,9 +1,13 @@
 import data from "../patients.ts";
-import type { PatientsEntry, NewPatientEntry } from "../types/types.ts";
+import type {
+  PatientEntry,
+  NewPatientEntry,
+  NonSensitivePatientEntry,
+} from "../types.ts";
 
-const patients: PatientsEntry[] = data;
+const patients: PatientEntry[] = data;
 
-const getEntries = (): PatientsEntry[] => {
+const getEntries = (): NonSensitivePatientEntry[] => {
   return patients.map(({ id, name, dateOfBirth, gender, occupation }) => ({
     id,
     name,
@@ -13,8 +17,8 @@ const getEntries = (): PatientsEntry[] => {
   }));
 };
 
-const addPatients = (patient: NewPatientEntry): PatientsEntry => {
-  const newPatients: PatientsEntry = {
+const addPatients = (patient: NewPatientEntry): PatientEntry => {
+  const newPatients: PatientEntry = {
     id: `${Date.now()}-${Math.random().toString(36).slice(2)}`,
     ...patient,
   };
