@@ -1,9 +1,9 @@
 import data from "../diagnoses.ts";
-import type { DiagnosesEntry } from "../types.ts";
+import type { Diagnosis } from "../types.ts";
 
-const diagnoses: DiagnosesEntry[] = data;
+const diagnoses: Diagnosis[] = data;
 
-const getEntries = (): DiagnosesEntry[] => {
+const getEntries = (): Diagnosis[] => {
   return diagnoses;
 };
 
