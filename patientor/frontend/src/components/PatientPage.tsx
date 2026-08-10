@@ -255,13 +255,92 @@ const PatientPage = () => {
 
             {formData.type === "OccupationalHealthcare" && (
               <>
-                {/* your OccupationalHealthcare fields */}
+                <TextField
+                  id="employer-name"
+                  label="Employer"
+                  size="small"
+                  value={formData.employerName}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      employerName: e.target.value,
+                    })
+                  }
+                />
+
+                <TextField
+                  id="sick-leave-start"
+                  label="Sick Leave Start"
+                  size="small"
+                  type="date"
+                  value={formData.sickLeaveStartDate}
+                  slotProps={{
+                    inputLabel: {
+                      shrink: true,
+                    },
+                  }}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      sickLeaveStartDate: e.target.value,
+                    })
+                  }
+                />
+
+                <TextField
+                  id="sick-leave-end"
+                  label="Sick Leave End"
+                  size="small"
+                  type="date"
+                  value={formData.sickLeaveEndDate}
+                  slotProps={{
+                    inputLabel: {
+                      shrink: true,
+                    },
+                  }}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      sickLeaveEndDate: e.target.value,
+                    })
+                  }
+                />
               </>
             )}
 
             {formData.type === "Hospital" && (
               <>
-                {/* your Hospital fields */}
+                <TextField
+                  id="discharge-date"
+                  label="Discharge Date"
+                  size="small"
+                  type="date"
+                  value={formData.dischargeDate}
+                  slotProps={{
+                    inputLabel: {
+                      shrink: true,
+                    },
+                  }}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      dischargeDate: e.target.value,
+                    })
+                  }
+                />
+
+                <TextField
+                  id="discharge-criteria"
+                  label="Discharge Criteria"
+                  size="small"
+                  value={formData.dischargeCriteria}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      dischargeCriteria: e.target.value,
+                    })
+                  }
+                />
               </>
             )}
 
